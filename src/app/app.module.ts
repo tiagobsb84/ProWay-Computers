@@ -16,7 +16,7 @@ import { NaoEncontradoComponent } from './components/nao-encontrado/nao-encontra
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule 
   ],
   providers: [],
   bootstrap: [AppComponent]
