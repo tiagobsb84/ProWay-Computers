@@ -11,11 +11,17 @@ export class CarrinhoService {
   constructor() { }
 
   obterCarrinho() {
-    return JSON.parse(localStorage.getItem("carrinho") || "");
+    this.itens = JSON.parse(localStorage.getItem("carrinho") || "");
+    return this.itens;
   }
 
   adicionarCarrinho(produto: IProdutosCarrinho) {
     this.itens.push(produto);
+    localStorage.setItem("carrinho", JSON.stringify(this.itens));
+  }
+
+  removeProdutoCarrinho(produtoId: number) {
+    this.itens = this.itens.filter(item => item.id !== produtoId);
     localStorage.setItem("carrinho", JSON.stringify(this.itens));
   }
 
